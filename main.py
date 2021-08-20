@@ -78,5 +78,5 @@ async def on_message(message):
         await message.channel.send(l)
 
 
-client.run(Token)
+client.run(process.env.Token)
 
