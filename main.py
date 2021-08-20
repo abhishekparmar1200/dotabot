@@ -77,6 +77,6 @@ async def on_message(message):
         l=df[v]
         await message.channel.send(l)
 
-token=process.env.Token
+token=os.environ['Token']
 client.run(token)
 
