@@ -3,9 +3,27 @@ import pandas
 import os
 import pandas as pd
 from discord.ext import commands
+import json
+#df=pd.read_json("weakness.json")
+#del(df[''])
+with open('final_weakness3.json') as json_file:
+    df = json.load(json_file)
 
-df=pd.read_json("weakness.json")
-del(df[''])
+def display(a):
+    s=""
+    for i in a:
+        t=" "
+        i=i.split(" ")
+        i[0]="**"+i[0]
+        i[1]=i[1]+"**"+": "
+        t=t.join(i)
+        s+=t+"\n"
+
+
+
+
+    return s
+
 
 client = discord.Client()  
 
@@ -75,8 +93,10 @@ async def on_message(message):
         v=message.content
         v=v.replace("$w ","")
         l=df[v]
-        await message.channel.send(l)
+        ans=display(l)
+        await message.channel.send(ans)
 
-token=os.environ['Token']
+token=os.environ["Token"]
+
 client.run(token)
 

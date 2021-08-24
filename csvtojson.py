@@ -23,6 +23,4 @@ csvFilePath = r'final_weakness.csv'
 jsonFilePath = r'weakness.json'
 #csv_to_json(csvFilePath, jsonFilePath)
 
-df=pd.read_json("weakness.json")
-del(df[''])
-print(df["Spirit_Breaker"])
+
